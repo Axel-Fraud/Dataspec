@@ -1,74 +1,114 @@
-# Dataspec
-Open-source Bayesian data analysis software with MCMC sampling, nonlinear regression, Poisson modeling, and interactive visualizations. Built in PyQt5 for scientists and students seeking intuitive tools for probabilistic inference and uncertainty quantification.
+# DataSpec – Bayesian Data Analysis Toolkit
 
-# DataSpec – Bayesian Data Analysis Software
-
-**DataSpec** is a cross-platform desktop application for Bayesian data analysis, model fitting, and uncertainty quantification. It provides researchers and students with an intuitive graphical interface for performing probabilistic inference, nonlinear regression, and statistical modeling — all without needing to write a single line of code.
-
-Originally developed to support scientific research in nuclear spectroscopy, DataSpec is designed for broader use across physics, environmental science, and data-driven research fields where transparency, uncertainty, and interpretability matter.
+**DataSpec** is an open-source Python desktop application for scientific data analysis, Bayesian modeling, and nonlinear curve fitting. It provides researchers and students with an intuitive PyQt5 GUI to perform advanced statistical workflows — including Poisson modeling, MCMC inference, and data profiling — without writing any code.
 
 ---
 
-## 🔍 Key Features
+## 🚀 Key Features
 
-- **Bayesian Curve Fitting**  
-  Supports Gaussian, Voigt, and user-defined nonlinear models with full posterior parameter estimation.
+- 📊 **Bayesian Regression**: Fit Gaussian, Voigt, and Poisson models with posterior sampling using PyMC3  
+- 🧠 **MCMC Inference**: Explore parameter uncertainty with NUTS and Metropolis-Hastings samplers  
+- 🧪 **Nonlinear Curve Fitting**: Supports peak analysis for experimental data (e.g., nuclear spectroscopy)  
+- 📈 **Uncertainty Visualization**: Automatically plots best-fit curves, confidence intervals, and residuals  
+- 🧹 **Data Profiling**: Generates detailed HTML reports (via ydata-profiling) for exploratory analysis  
+- 🧰 **PyQt5 Interface**: Clean GUI supports drag-and-drop CSV input, interactive selection, and session feedback  
 
-- **MCMC Sampling with PyMC**  
-  Leverages PyMC3/4 for probabilistic modeling, including NUTS and Metropolis-Hastings samplers, trace diagnostics, and posterior predictive checks.
+---
 
-- **Poisson Regression**  
-  Tailored for low-count experimental data, especially in particle physics, nuclear data, and biomedical applications.
+## 📂 Project Contents
 
-- **Drag-and-Drop Interface**  
-  Easily load CSV files via GUI; preview, clean, and prepare datasets before modeling.
-
-- **Uncertainty Visualization**  
-  Automatically generates best-fit curves with shaded confidence regions, residuals, and parameter summaries.
-
-- **Interactive Data Cleaning**  
-  Rename columns, interpolate missing values, remove outliers — all within the interface.
-
-- **Session History + Undo**  
-  Every analysis step is tracked. Undo mistakes or revisit earlier configurations with a single click.
-
-- **Modular Plugin Architecture**  
-  Easily extend functionality — add your own models, prior structures, or data loaders.
+```
+DataSpec-App/
+├── DataSpec.py             # Main application script (PyQt5 GUI)
+├── profile.html            # Example data profiling report
+├── requirements.txt        # All Python dependencies
+├── .gitignore              # Exclusions for cleaner version control
+├── README.md               # You're reading it!
+├── 1.png - 7.png           # Output plots and UI screenshots
+```
 
 ---
 
 ## ⚡ Quick Start
 
-1. Download the `.exe` or `.app` from the [Releases](https://github.com/yourusername/dataspec/releases) page  
-2. Launch the app  
-3. Drag in a CSV file  
-4. Select a model, fit, and visualize the results
-
----
-
-## 🧠 Supported Models
-
-- Gaussian  
-- Voigt (Gaussian-Lorentz convolution)  
-- Poisson (ideal for count data)  
-- Custom (define your own via expression input or plugin)
-
----
-
-## 💻 Installation & Usage
-
-### 🟢 Option 1: Use Prebuilt Application
-
-1. Visit the [Releases](https://github.com/yourusername/dataspec/releases) page  
-2. Download the latest version for your OS  
-3. Run the executable — no setup required
-
-### 🧪 Option 2: Run From Source
-
+### Run the App
 ```bash
-git clone https://github.com/yourusername/dataspec.git
-cd dataspec
+python DataSpec.py
+```
+> Requires Python 3.8+ and dependencies listed in `requirements.txt`. Use the GUI to load your data, select a model, and run fits.
+
+---
+
+## 📦 Installation
+
+### 1. Clone the repo
+```bash
+git clone https://github.com/yourusername/DataSpec-App.git
+cd DataSpec-App
+```
+
+### 2. (Optional) Create a virtual environment
+```bash
 python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+### 3. Install required packages
+```bash
 pip install -r requirements.txt
-python main.py
+```
+
+---
+
+## 🔧 Dependencies
+
+Dependencies are listed in `requirements.txt`. Key packages include:
+
+```
+numpy>=1.22.0
+pandas>=1.4.0
+matplotlib>=3.5.0
+seaborn>=0.11.2
+scipy>=1.8.0
+pyqt5>=5.15.7
+pymc3>=3.11
+arviz>=0.11.0
+theano-pymc>=1.1.2
+ydata-profiling>=4.4.0
+```
+
+---
+
+## 📸 Screenshots
+
+### 📈 Voigt Curve Fit
+<img src="1.png" width="600"/>
+
+### 🔥 Residual Heatmap
+<img src="3.png" width="600"/>
+
+---
+
+## 📑 Example Output
+
+This repository includes a working HTML profiling report generated with `ydata-profiling`.  
+You can open [`profile.html`](./profile.html) in any browser to view:
+
+- Column-level statistics
+- Histograms and correlation heatmaps
+- Null value counts and outlier warnings
+- Interactions and variable summaries
+
+---
+
+## 📄 License
+
+MIT License — free to use, modify, and redistribute with attribution.
+
+---
+
+## 👤 Author
+
+**Axel Fraud**  
+Physics + Data Science @ NC State  
+[LinkedIn](https://www.linkedin.com/in/axel-fraud) • [dataspec.org](https://dataspec.org)
