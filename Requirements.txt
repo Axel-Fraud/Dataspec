@@ -1,0 +1,10 @@
+numpy>=1.22.0
+pandas>=1.4.0
+matplotlib>=3.5.0
+seaborn>=0.11.2
+scipy>=1.8.0
+pyqt5>=5.15.7
+pymc3>=3.11
+arviz>=0.11.0
+theano-pymc>=1.1.2
+ydata-profiling>=4.4.0  # For HTML data profiling (successor to pandas-profiling)
